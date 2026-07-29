@@ -10,18 +10,35 @@
 }
 
 
+/* Spinner */
+
 /* css loader generated using https://10015.io/tools/css-loader-generator */
-.spinner {
-   margin: 40px;
-   width: 11.2px;
-   height: 11.2px;
-   animation: spinner-z355kx 1s infinite linear;
-   border-radius: 11.2px;
-   box-shadow: 28px 0px 0 0 #fff, 17.4px 21.8px 0 0 #fff, -6.2px 27.2px 0 0 #fff, -25.2px 12px 0 0 #fff, -25.2px -12px 0 0 #fff, -6.2px -27.2px 0 0 #fff, 17.4px -21.8px 0 0 #fff;
+.custom-loader {
+    width: 50px;
+    height: 50px;
+    display: grid;
+}
+.custom-loader::before,
+.custom-loader::after {    
+    content:"";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side,#1F42F4 92%,#0000);
+    background: 
+      var(--c) 50%  0, 
+      var(--c) 50%  100%, 
+      var(--c) 100% 50%, 
+      var(--c) 0    50%;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    animation: s2 1s infinite;
+}
+.custom-loader::before {
+  margin:4px;
+  filter:hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear
 }
 
-@keyframes spinner-z355kx {
-   to {
-      transform: rotate(360deg);
-   }
+@keyframes s2{ 
+  100%{transform: rotate(.5turn)}
 }
