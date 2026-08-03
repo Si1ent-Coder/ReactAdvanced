@@ -12,7 +12,7 @@ const App=()=>{
 
 
       {/* Now From Here */}
-      <div>
+      <div className="bg-slate-900">
         <Navbar></Navbar>
       </div>
 
